@@ -1,0 +1,540 @@
+html,body { z-index: 2;font: arial; height: 100%; width: 100%;  margin: 0; padding: 0;  background: #262626; }
+
+.Section1 { margin: 0; padding: 0; width: 100%; height: 55em; background-color: #262626; }
+
+.ContentBox{ background-color: #ededed; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+
+.fade { -webkit-animation-name: fade; -webkit-animation-duration: 1.5s; animation-name: fade; animation-duration: 1.5s;}
+
+.bottomtotop2{ -webkit-animation: nav linear 4s alternate; /* Safari 4.0 - 8.0 */ animation: nav linear 4s alternate;}
+
+.bottomtotop{ -webkit-animation: underBody linear 2s alternate; /* Safari 4.0 - 8.0 */ animation: underBody linear 3s alternate;}
+
+.ShowProject{
+  -webkit-animation: slide-top 0.75s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-top 0.75s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+
+@-webkit-keyframes slide-top {
+  0% { -webkit-transform: translateY(-50%); transform: translateY(-50%);}
+  100% { -webkit-transform: translateY(0); transform: translateY(0);}
+}
+@keyframes slide-top {
+  0% { -webkit-transform: translateY(-50%); transform: translateY(-50%); }
+  100% { -webkit-transform: translateY(0); transform: translateY(0); }
+}
+
+@-webkit-keyframes HideProject { 0%   {height: 60em; display: none;} 25%  {height: 0%} 50%  {height: 0%} 75%  {height: 0%} 100% {height: 0%;}
+}
+
+@keyframes HideProject { 0%   {height: 60em; display: none;} 25%  {height: 0%} 50%  {height: 0%} 75%  {height: 0%} 100% {height: 0%}
+}
+
+@-webkit-keyframes nav { 0%   {top:0px;} 25%  {top:0px;} 50%  {top:0px;} 75%  {top:0px;} 100% {top:0px;}
+}
+
+@keyframes nav { 0%   {top:0px;} 25%  {top:0px;} 50%  {top:0px;} 75%  {top:0px;} 100% {top:0px;}
+}
+
+@-webkit-keyframes underBody { 0%   {top: calc(100% - 5em)} 25%  {top:0px;} 50%  {top:0px;} 75%  {top:0px;} 100% {top:0px;}
+}
+
+@keyframes underBody { 0%   {top: calc(100% - 5em)} 25%  {top:0px;} 50%  {top:0px;} 75%  {top:0px;} 100% {top:0px;} }
+
+@-webkit-keyframes fade { from {opacity: .1;} to {opacity: 1;} }
+
+@keyframes fade { from {opacity: .1;} to {opacity: 1;} }
+
+#HomepageSlider{
+  height: calc(100%);
+}
+
+.HomepageSlider-item{
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: url('../Images/Backgrounds/HomePage/background1.jpg');
+  background-size: cover;
+  float: left;
+}
+
+.Logo{
+  position: absolute;
+  width: 20em;
+  height: 7.5em;
+  background: white;
+  border: black solid 0.5em;
+  text-align: center;
+  font-size: 1.5em;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translatey(-50%);
+  transform: translateX(-50%) translatey(-50%);
+  font-family: 'Baloo', cursive;
+}
+
+.Logo > h1 {
+  margin: 0;
+  margin-top: 0.5em;
+}
+
+.Logo > h2 {
+  margin: 0;
+}
+
+body > button {
+  font-size: 2em;
+  width: 1.5em;
+  height: 2.5em;
+  position: absolute;
+  top: 45%;
+  bottom: 0;
+}
+
+#RightButton {
+  right: 0;
+}
+
+#BackgroundSelecter {
+  display: block;
+  position: absolute;
+  list-style: none;
+  bottom: 5em;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%)
+}
+
+
+#BackgroundSelecter > li {
+  background: white;
+  border-radius: 100%;
+  border: solid 1px;
+  width: 0.75em;
+  height: 0.75em;
+  float: left;
+  margin: 0.5em
+}
+
+#BackgroundSelecter > li:hover {
+  background: grey;
+  cursor: pointer;
+}
+
+.SelectedSelector{
+  background: grey;
+  transform: scaleX(1.5) scaleY(1.5);
+  transition: 0.5s;
+}
+
+.UnderBody{
+  font-family: 'Oswald', sans-serif;
+}
+
+nav{
+  width: 100%;
+  height: 3.5em;
+  position: fixed;
+  bottom: 0;
+  background: #ededed;
+  font-size: 1.5em;
+}
+
+.NavItem {
+  float: left;
+  width: 33.333333333%;
+  height: 100%;
+  text-align: center;
+  background: white;
+}
+
+.NavItem:hover{
+  cursor: pointer;
+  background-color: lightgrey;
+  transition: 0.5s;
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+}
+
+#NotSelectedNav:hover{
+  background-color: lightgrey;
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+}
+
+#SelectedNav:hover{
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+}
+
+.NavItem > h2{
+  margin: 0;
+  margin-top: 0.5em;
+}
+
+#SelectedNav{
+  background: white;
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+}
+
+#NotSelectedNav {
+  background: #ededed;
+}
+
+.UnderBody{
+  position: absolute;
+  width: 100%;
+  background: white;
+  top: 0;
+}
+
+#Projecten {
+  text-align: center;
+}
+
+.Content > div {
+  margin-top: 5em;
+  width: 100%;
+  height: 90%;
+  display: none;
+}
+
+#Projecten > h2 {
+  margin-top: 6em
+}
+
+#ProjectInfoTab{
+  height: 50em;
+  display: none;
+}
+
+#ProjectInfoTab > div{
+  float: left;
+}
+
+#ProjectShowCase{
+  height: 100%;
+  min-width: 360px;
+  width: 40%;
+}
+
+#Tumbnails{
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+#TumbnailHolder{
+  padding: 0;
+  margin: 0;
+  margin-top: 10%;
+  list-style: none;
+  display: block;
+}
+
+#ButtonWrap{
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 4em
+}
+
+#ButtonWrap > button {
+  display: inline-block;
+  font-size: 1.25em;
+  width: 120px;
+  height: 100%;
+  float: left;
+}
+
+#SelectedTumbnail{
+  float: left;
+  padding: 0;
+  width: calc(100% - 240px);
+  height: 100%;
+  margin: 0;
+  background: grey;
+}
+
+.ProjectTumbnail , .ProjectTumbnail > img{
+  position: relative;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+#ExitButton{
+  float: right;
+}
+
+#ProjectInfo{
+  width: 60%;
+  height: 100%;
+  background: white;
+  text-align: left;
+}
+
+#ProjectInfo > .Text {
+  width: 80%;
+  margin: 0 auto;
+  font-size: 1.5
+}
+
+#ProjectInfo > .Text > p{
+  width: 80%;
+}
+
+ td {
+  padding-right: 2em;
+}
+
+#filter {
+  display: inline-flex;
+  padding: 0;
+  list-style: none;
+  list-style: none;
+  background: white;
+  margin: 0 auto;
+}
+
+#filter > li {
+  margin: 0;
+  min-width: 5em;
+  font-size: 1.5em;
+  float: left;
+  background: lightgrey;
+  text-align: center;
+  transition: 0.5s;
+}
+
+#filter > li:hover {
+  cursor: pointer;
+  background: #bcbcbc;
+}
+
+#filter > .ative{
+  transition: 0.5s
+  -webkit-box-shadow: inset 0px 0px 12px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: inset 0px 0px 12px 0px rgba(0,0,0,0.75);
+box-shadow: inset 0px 0px 12px 0px rgba(0,0,0,0.75);
+}
+
+#FirstFilterElement{
+  border-top-left-radius: 1em;
+  border-bottom-left-radius: 1em;
+  padding: 0 0.5em;
+}
+
+#LastFilterElement{
+  border-top-right-radius: 1em;
+  border-bottom-right-radius: 1em;
+  padding: 0 0.5em;
+}
+
+.ProjectContent {
+  text-align: center;
+}
+
+.ProjectList {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  max-width: 70%;
+  margin: 0 auto;
+  height: auto;
+  list-style: none;
+  margin-top: 5%;
+}
+
+.ProjectItem{
+  display: block;
+  font-size: 1.5em;
+  height: 270px;
+  width: 480px;
+  margin: 1em 1em;
+  float: left;
+  border-radius: 1em;
+  -webkit-box-shadow: 10px 10px 15px -3px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 15px -3px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 15px -3px rgba(0,0,0,0.75);
+  position: relative;
+  transition: 1s;
+}
+
+.ProjectItem > img{
+  border-radius: 1em;
+  transition: 1s;
+  width: 100%;
+  height: 100%;
+
+}
+
+.ProjectItem > p{
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+}
+
+.ProjectItem:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  -webkit-box-shadow: 10px 10px 73px -20px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 73px -20px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 73px -20px rgba(0,0,0,0.75);
+  transition: 1s;
+}
+
+.ProjectItem:hover #Discription {
+  visibility: visible;
+  transition: 0.2s;
+  opacity: 1;
+  transition: opacity 1s, visibility 1s;
+}
+
+.ProjectItem > p{
+  visibility: hidden;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  opacity: 0;
+  background-color: rgb(0, 0, 0, 0.5);
+  transition: 1s;
+  color: white;
+}
+
+.ProjectItem > img {
+  width: 100%;
+  height: 100%;
+}
+
+#profilePic{
+  float: left;
+  width: 15%;
+  margin: 5% 0em;
+  margin-left: 5%;
+  border-radius: 1em;
+  border: 1px solid;
+}
+
+.Qualities{
+  float: right;
+  width: 75%;
+  margin-top: 3em
+}
+
+.QualitiesItem{
+  float: left;
+  width: 15em;
+  font-size: 1.3em;
+  margin: 1% 3%;
+  text-align: center;
+}
+
+.QualitiesItem > img{
+  width: 10em;
+}
+
+.QualitiesItem > p{
+  text-align: left;
+}
+
+.Programmingcareer{
+  display: block;
+  width: 100%;
+  height: 12em;
+  text-align: center;
+  float: left;
+  font-size: 1.4em
+}
+
+.Programmingcareer > p{
+  display: block;
+  text-align: left;
+  margin: 1em 10%;
+}
+
+#Contact{
+  text-align: center;
+}
+
+#Contact> h1{
+  margin-top: 5em;
+}
+
+#Contact> a {
+  text-decoration: none;
+}
+
+#MailButton {
+	-moz-box-shadow:inset 0px 2px 0px 0px #97c4fe;
+	-webkit-box-shadow:inset 0px 2px 0px 0px #97c4fe;
+	box-shadow:inset 0px 2px 0px 0px #97c4fe;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #3e94f0), color-stop(1, #1e62d0));
+	background:-moz-linear-gradient(top, #3e94f0 5%, #1e62d0 100%);
+	background:-webkit-linear-gradient(top, #3e94f0 5%, #1e62d0 100%);
+	background:-o-linear-gradient(top, #3e94f0 5%, #1e62d0 100%);
+	background:-ms-linear-gradient(top, #3e94f0 5%, #1e62d0 100%);
+	background:linear-gradient(to bottom, #3e94f0 5%, #1e62d0 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#3e94f0', endColorstr='#1e62d0',GradientType=0);
+	background-color:#3e94f0;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #337fed;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:2em;
+	font-weight:bold;
+	padding:15px 76px;
+	text-decoration:none;
+	text-shadow:1px -3px 0px #1570cd;
+  width: 50%;
+  margin: 1em calc((100% - 60%) / 2);
+}
+#MailButton:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #1e62d0), color-stop(1, #3e94f0));
+	background:-moz-linear-gradient(top, #1e62d0 5%, #3e94f0 100%);
+	background:-webkit-linear-gradient(top, #1e62d0 5%, #3e94f0 100%);
+	background:-o-linear-gradient(top, #1e62d0 5%, #3e94f0 100%);
+	background:-ms-linear-gradient(top, #1e62d0 5%, #3e94f0 100%);
+	background:linear-gradient(to bottom, #1e62d0 5%, #3e94f0 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#1e62d0', endColorstr='#3e94f0',GradientType=0);
+	background-color:#1e62d0;
+}
+#MailButton:active {
+	position:relative;
+	top:1px;
+}
+
+#SocialMediaButton{
+  width: 12em;
+}
+
+#icons{
+  position: absolute;
+  bottom: 0;
+  margin: 1em;
+}
+
+#HomeButton{
+  width: 5em;
+  height: 5em;
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+  display: none;
+}
+
+#HomeButton > img {
+  width: 100%;
+  height: 100%;
+}
