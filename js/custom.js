@@ -3,7 +3,7 @@
   // Init Wow
   wow = new WOW({
     animateClass: 'animated',
-    offset: 100
+    offset: 0
   });
   wow.init();
 
@@ -19,7 +19,7 @@
     var nav = $($anchor.attr('href'));
     if (nav.length) {
       $('html, body').stop().animate({
-        scrollTop: $($anchor.attr('href')).offset().top - 100
+        scrollTop: $($anchor.attr('href')).offset().top
       }, 1500, 'easeInOutExpo');
 
       event.preventDefault();
