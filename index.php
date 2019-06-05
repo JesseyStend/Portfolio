@@ -18,22 +18,20 @@
     <div class="bg-color">
       <!--nav-->
       <nav class="nav navbar-default navbar-fixed-top">
-        <div class="container">
-          <div class="col-md-12">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mynavbar" aria-expanded="false" aria-controls="navbar">
-                            <span class="fa fa-bars"></span>
-                        </button>
-              <!-- <a href="index.html" class="navbar-brand">Bethany</a> -->
-            </div>
-            <div class="collapse navbar-collapse navbar-right" id="mynavbar">
-              <ul class="nav navbar-nav">
-                <li class="active"><a href="#header">Home</a></li>
-                <li><a href="#AboutMe">About Me</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
-              </ul>
-            </div>
+        <div class="col-md-12">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mynavbar" aria-expanded="false" aria-controls="navbar">
+                          <span class="fa fa-bars"></span>
+                      </button>
+            <!-- <a href="index.html" class="navbar-brand">Bethany</a> -->
+          </div>
+          <div class="collapse navbar-collapse navbar-right" id="mynavbar">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#header">Home</a></li>
+              <li><a href="#AboutMe">About Me</a></li>
+              <li><a href="#portfolio">Portfolio</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
           </div>
         </div>
       </nav>
@@ -48,6 +46,53 @@
     </div>
   </header>
   <!--/ header-->
+  <!---->
+  <!---->
+  <section class="section-padding wow fadeInUp delay-02s" id="portfolio">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-sm-12">
+          <div class="section-title">
+            <h2 class="head-title">Portfolio</h2>
+            <hr class="botm-line">
+            <p class="sec-para">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..</p>
+          </div>
+        </div>
+        <div class="col-md-12 col-sm-12" id="ProjectContainer">
+          <!-- <div class="col-md-4 col-sm-6 padding-right-zero">
+            <div class="portfolio-box design">
+              <img src="img/port01.jpg" alt="" class="img-responsive">
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 padding-right-zero">
+            <div class="portfolio-box design">
+              <img src="img/port02.jpg" alt="" class="img-responsive">
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 padding-right-zero">
+            <div class="portfolio-box design">
+              <img src="img/port03.jpg" alt="" class="img-responsive">
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 padding-right-zero">
+            <div class="portfolio-box design">
+              <img src="img/port04.jpg" alt="" class="img-responsive">
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 padding-right-zero">
+            <div class="portfolio-box design">
+              <img src="img/port05.jpg" alt="" class="img-responsive">
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 padding-right-zero">
+            <div class="portfolio-box design">
+              <img src="img/port06.jpg" alt="" class="img-responsive">
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </section>
   <!---->
   <!---->
   <section id="AboutMe" class="section-padding">
@@ -114,53 +159,6 @@
               <p class="txt-para">Een van mijn eigenschappen waar ik het meest trots op ben, is mijn sociale vaardigheid. Dit is te blijken uit mijn horeca ervaring als barman en de sport die ik doe. Mijn collega's beschrijven me ook als een sociale, vriendelijke jonge.</p>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!---->
-  <!---->
-  <section class="section-padding wow fadeInUp delay-02s" id="portfolio">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-3 col-sm-12">
-          <div class="section-title">
-            <h2 class="head-title">Portfolio</h2>
-            <hr class="botm-line">
-            <p class="sec-para">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..</p>
-          </div>
-        </div>
-        <div class="col-md-9 col-sm-12" id="ProjectContainer">
-          <!-- <div class="col-md-4 col-sm-6 padding-right-zero">
-            <div class="portfolio-box design">
-              <img src="img/port01.jpg" alt="" class="img-responsive">
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 padding-right-zero">
-            <div class="portfolio-box design">
-              <img src="img/port02.jpg" alt="" class="img-responsive">
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 padding-right-zero">
-            <div class="portfolio-box design">
-              <img src="img/port03.jpg" alt="" class="img-responsive">
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 padding-right-zero">
-            <div class="portfolio-box design">
-              <img src="img/port04.jpg" alt="" class="img-responsive">
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 padding-right-zero">
-            <div class="portfolio-box design">
-              <img src="img/port05.jpg" alt="" class="img-responsive">
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 padding-right-zero">
-            <div class="portfolio-box design">
-              <img src="img/port06.jpg" alt="" class="img-responsive">
-            </div>
-          </div> -->
         </div>
       </div>
     </div>

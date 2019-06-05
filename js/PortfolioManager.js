@@ -5,7 +5,7 @@ function CreateTab(imgSource, id) {
   var inside = document.createElement("div");
   var img = document.createElement("img");
 
-  tab.setAttribute('class', "col-md-4 col-sm-6 padding-right-zero");
+  tab.setAttribute('class', "col-md-4 col-sm-6");
   inside.setAttribute('class', "portfolio-box design");
   img.setAttribute('class', "img-responsive");
   img.setAttribute('src', imgSource);
@@ -20,5 +20,5 @@ function CreateTab(imgSource, id) {
 }
 
 for (var i = 1; i <= 6; i++) {
-  CreateTab("img/port0"+i+".jpg", i);
+  CreateTab("img/port01.jpg", i);
 }
