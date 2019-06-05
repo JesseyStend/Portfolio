@@ -2,8 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Project injection</title>
+    <title>Voeg Project toe</title>
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="../css/animate.css">
@@ -11,51 +10,81 @@
   </head>
 
   <body>
-    <h1>Project</h1>
-    <div class="section-padding" id="contact">
+    <section class="section-padding wow fadeInUp delay-05s" id="contact">
       <div class="container">
-        <div class="row">
-          <div class="col-md-3">
-            <form method="post" action="WriteProject.php" class="contactForm">
-              <label for="Projectname">Project name<label><br>
-                <input type="text" id="Projectname" name="Projectname" autofocus/><br>
-
-              <label for="Subtitel">Subtitel<label><br>
-                <input type="text" id="Subtitel" name="Subtitel"/><br>
-
-              <label for="Disctiptie">Disctiptie</label><br>
-                  <textarea id="Disctiptie" name="Disctiptie" ></textarea><br>
-
-              <label for="Geleerd">Geleerd</label><br>
-                  <textarea id="Geleerd" name="Geleerd" ></textarea><br>
-
-              <label for="tools">tools</label><br>
-                  <input type="text" id="tools" name="tools" ><br>
-
-              <label for="Other">Other</label><br>
-                  <input type="text" id="Other" name="Other" ><br>
-
-              <label for="ImagesEnGifs">Images en gifs</label><br>
-                  <input id="ImagesEnGifs" name="ImagesEnGifs" type="file" name="pic" accept="image/*" multiple><br>
-
-              <label for="trailer">trailer</label><br>
-                  <input type="text" id="trailer" name="trailer" ><br>
-
-              <label for="project">project</label><br>
-                  <input type="text" id="project" name="project" ><br>
-
-              <label for="github">github</label><br>
-                  <input type="text" id="github" name="github" ><br>
-
-                  <input type="submit" class="btn-submit" name="" value="Submit">
-                </form>
+        <div class="row white">
+          <div class="col-md-8 col-sm-12">
+            <div class="section-title">
+              <h2 class="head-title black">Project</h2>
+              <hr class="botm-line">
+              <p class="sec-para black">Voeg je project toe</p>
+            </div>
           </div>
+          <div class="col-md-12 col-sm-12">
+            <div class="col-md-4 col-sm-6" style="padding-left:0px;">
+              <h3 class="cont-title">Email mij</h3>
+              <div class="contact-info">
+                <form action="WriteProject.php" method="post" role="form" class="contactForm" enctype="multipart/form-data">
 
+                  <div class="form-group">
+                    <input type="text" name="Name" class="form-control" id="Name" placeholder="Project Naam" data-rule="minlen:4" data-msg="Please enter at least 4 chars" autofocus />
+                    <div class="validation"></div>
+                  </div>
 
+                  <div class="form-group">
+                    <input type="text" class="form-control" name="Subtitle" id="Subtitle" placeholder="Subtitle" data-rule="minlen:6" data-msg="Please enter at least 4 chars" />
+                    <div class="validation"></div>
+                  </div>
+
+                  <div class="form-group">
+                    <textarea class="form-control" name="Disctiptie" id="Disctiptie" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Disctiptie"></textarea>
+                    <div class="validation"></div>
+                  </div>
+
+                  <div class="form-group">
+                    <textarea class="form-control" name="Geleerd" id="Geleerd" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="What heb ik geleerd?"></textarea>
+                    <div class="validation"></div>
+                  </div>
+
+                  <div class="form-group">
+                    <input type="text" class="form-control" name="Tools" id="Tools" placeholder="Tools" data-rule="minlen:6" data-msg="Please enter at least 4 chars" />
+                    <div class="validation"></div>
+                  </div>
+
+                  <div class="form-group">
+                    <input type="text" class="form-control" name="Other" id="Other" placeholder="Other" data-rule="minlen:6" data-msg="Please enter at least 4 chars" />
+                    <div class="validation"></div>
+                  </div>
+
+                  <div class="form-group">
+                    <input name="upload[]" type="file" multiple="multiple" />
+                    <!-- <input type="file" name="upload[]" id="ImagesEnGifs" data-rule="required" data-msg="Please select one or more files" multiple> -->
+                    <div class="validation"></div>
+                  </div>
+
+                  <div class="form-group">
+                    <input type="url" class="form-control" name="Trailer" id="Trailer" placeholder="Trailer" data-rule="minlen:6" data-msg="Please enter at least 4 chars"/>
+                    <div class="validation"></div>
+                  </div>
+
+                  <div class="form-group">
+                    <input type="url" class="form-control" name="Project" id="Project" placeholder="Project" data-rule="minlen:6" data-msg="Please enter at least 4 chars" />
+                    <div class="validation"></div>
+                  </div>
+
+                  <div class="form-group">
+                    <input type="url" class="form-control" name="Github" id="Github" placeholder="Github" data-rule="minlen:6" data-msg="Please enter at least 4 chars" />
+                    <div class="validation"></div>
+                  </div>
+
+                  <button type="submit" class="btn btn-send">Send</button>
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-
-    </div>
+    </section>
 
   </body>
 </html>

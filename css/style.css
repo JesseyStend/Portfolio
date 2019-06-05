@@ -74,9 +74,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
-  color: #FFD34E;
+  color: #FFF10A;
   text-transform: uppercase;
 	background-color: transparent;
+  text-decoration: underline;
 }
 
 .navbar-default .navbar-nav>li>a {
@@ -292,6 +293,17 @@ h3.txt-tl {
   margin-bottom: 15px;
 }
 
+.portfolio-box > img {
+
+  transition: 1s;
+}
+
+.portfolio-box > img:hover {
+  transform: scale(1.1);
+  transition: 1s;
+  cursor: pointer;
+}
+
 .padding-right-zero {
   padding-right: 0px;
 }
@@ -411,6 +423,10 @@ a, a:hover {
 
 .link-dec, .link-dec:hover {
   color: #000;
+}
+
+.sec-para{
+  margin-bottom: 20px;
 }
 
 /****/
