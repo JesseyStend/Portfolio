@@ -90,7 +90,10 @@
         VALUES ('$projectname', '$Subtitle', '$Disctiptie', '$Geleerd', '$Tools', '$Other', '$GithubLink', '$ProjectLink', '$Trailer', '$ImagesEnGifs')";
 
         if (mysqli_query($dbc,$query)) {
-            echo "Succes uploading";
+            echo "<br> Succesful upload <br> <br>";
+            for ($i=0; $i < count($objects); $i++) {
+              echo print_var_name($objects[$i]) . ": " . $objects[$i] . " <br>";
+            }
         } else {
             echo "Error: " . $query . "<br>" . $dbc->error;
         }
