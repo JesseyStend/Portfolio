@@ -1,26 +1,41 @@
-<?php
-    $servername = "rdbms.strato.de";
-    $username = "U3772978";
-    $password = "PortfolioMaster";
-    $dbname = "DB3772978";
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <?php
+        $servername = "rdbms.strato.de";
+        $username = "U3772978";
+        $password = "PortfolioMaster";
+        $dbname = "DB3772978";
 
-    $dbc = mysqli_connect($servername,$username,$password,$dbname);
+        $dbc = mysqli_connect($servername,$username,$password,$dbname);
 
-    if (!$dbc) {
-      die("Connection failed: " . mysqli_connect_error());
-    }
+        if (!$dbc) {
+          die("Connection failed: " . mysqli_connect_error());
+        }
 
-    $sql = "SELECT id, Naam, Subtitle, ProjectBeschrijving, WatHebIkGeleerd, Tools, Overig, Github, Project, Videos, Images FROM Portfolio";
-    $result = mysqli_query($dbc,$sql);
+        $sql = "SELECT id, Naam, Subtitle, ProjectBeschrijving, WatHebIkGeleerd, Tools, Overig, Github, Project, Videos, Images FROM Portfolio";
+        $result = mysqli_query($dbc,$sql);
 
-    $row_count = $result->num_rows;
-    $database = array();
+        $database = array();
+        $row_count = $result->num_rows;
 
-    if ($row_count > 0) {
-      while ($row = $result->fetch_assoc()) {
-        //array_push($database, $row)
-      }
-    }
+        if ($row_count > 0) {
+          while ($row = $result->fetch_assoc()) {
+            echo $row;
+            array_push($database, $row);
+            echo $database[0];
+          }
+        }
 
-    mysqli_close($dbc);
- ?>
+        $myJSON = json_encode($database);
+
+        echo $myJSON;
+
+        mysqli_close($dbc);
+     ?>
+  </body>
+</html>

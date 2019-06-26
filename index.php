@@ -18,9 +18,6 @@
    ?>
   <!--header-->
   <header class="main-header" id="header">
-    <script type="text/javascript">
-        var rows = "<?php echo $rows_count; ?>";
-    </script>
     <div class="bg-color">
       <!--nav-->
       <nav class="nav navbar-default navbar-fixed-top">
@@ -55,6 +52,13 @@
   <!---->
   <!---->
   <section class="section-padding wow fadeInUp delay-02s" id="portfolio">
+
+    <script type="text/javascript">
+        var rows = "<?php echo $row_count; ?>";
+        var databaseContent = <?php echo $myJSON; ?>;
+        console.log(databaseContent);
+    </script>
+
     <div class="container">
       <div class="row">
         <div class="col-md-12 col-sm-12">

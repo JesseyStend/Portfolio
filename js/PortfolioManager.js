@@ -15,15 +15,13 @@ function CreateTab(imgSource, id) {
 
 
   tab.onclick = () =>{
-
-
-    console.log( rows );
+    console.log(databaseContent);
   }
 
   portfolioContainer.appendChild(tab);
 }
 
-for (var i = 1; i <= 6; i++) {
+for (var i = 1; i <= parseInt(rows); i++) {
   CreateTab("img/port01.jpg", i);
 }
 
