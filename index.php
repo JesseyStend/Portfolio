@@ -13,6 +13,9 @@
 </head>
 
 <body>
+  <?php
+    include "Database/GetProject.php";
+   ?>
   <!--header-->
   <header class="main-header" id="header">
     <div class="bg-color">
@@ -55,9 +58,32 @@
           <div class="section-title">
             <h2 class="head-title">Portfolio</h2>
             <hr class="botm-line">
-            <p class="sec-para">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..</p>
           </div>
         </div>
+        <div class="col-md-12 col-sm-12" id="ProjectInfo">
+            <div class="ShowCase">
+              <div id="ProjectImage">
+                <img src="img/port01.jpg" alt="" class="img-responsive">
+              </div>
+            </div>
+            <div class="ProjectInformation">
+              <h2>Project naam</h2>
+              <p>Subtitle</p>
+              <h4>Beschrijving</h4>
+              <h5 id="Beschrijving">Some text</h5>
+              <h4>Geleerd</h4>
+              <h5 id="Geleerd">Some text</h5>
+              <h4>Overig</h4>
+              <h5 id="Overig">Some text</h5>
+            </div>
+            <div class="ProjectLinks">
+              <a id="Projectlink" href="https://www.google.com/search?q=github+logo&rlz=1C1TIGY_enNL701NL701&tbm=isch&source=lnt&tbs=ic:trans&sa=X&ved=0ahUKEwjUrNXJ3YbjAhWusaQKHfxtCXsQpwUIIg&biw=1536&bih=750&dpr=1.25#imgrc=Lp2OqU7fPdjSMM:"> <img src="img\Icons\ProjectIcon.png" id="ProjectIcons" alt=""> </a>
+              <a id="GithubLink" href="https://www.google.com/search?q=github+logo&rlz=1C1TIGY_enNL701NL701&tbm=isch&source=lnt&tbs=ic:trans&sa=X&ved=0ahUKEwjUrNXJ3YbjAhWusaQKHfxtCXsQpwUIIg&biw=1536&bih=750&dpr=1.25#imgrc=Lp2OqU7fPdjSMM:"> <img src="img/Icons/GithubIcon.png" id="ProjectIcons" alt=""> </a>
+            </div>
+          </div>
+
+        </div>
+        <p class="sec-para">Klik op de plaatjes om meer informatie tevoorschijn tehalen</p>
         <div class="col-md-12 col-sm-12" id="ProjectContainer">
           <!-- <div class="col-md-4 col-sm-6 padding-right-zero">
             <div class="portfolio-box design">

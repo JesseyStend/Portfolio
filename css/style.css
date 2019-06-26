@@ -193,7 +193,7 @@ h1, h2, h3, h4, h5, h6 {
 /****/
 
 #AboutMe {
-  background-color: #f8f8f8;
+  /* background-color: #f8f8f8; */
 }
 
 .head-title {
@@ -287,7 +287,9 @@ h3.txt-tl {
   color: #fff;
 }
 
-/****/
+#portfolio{
+  background-color: #f8f8f8;
+}
 
 .portfolio-box {
   margin-bottom: 15px;
@@ -302,6 +304,28 @@ h3.txt-tl {
   transform: scale(1.1);
   transition: 1s;
   cursor: pointer;
+}
+
+.ShowCase{
+  width: 720px;
+  float: left;
+}
+
+.ProjectInformation{
+  width: 720px;
+  height: 480px;
+  float: left;
+  margin-left: 2em;
+}
+
+.ProjectLinks{
+  float: left;
+}
+
+#ProjectIcons{
+  width: 100px;
+  height: 100px;
+  margin: 1em;
 }
 
 .padding-right-zero {

@@ -11,9 +11,13 @@ function CreateTab(imgSource, id) {
   img.setAttribute('src', imgSource);
   inside.appendChild(img);
   tab.appendChild(inside);
+  var rows = "<?php echo $rows_count; ?>";
+
 
   tab.onclick = () =>{
-    console.log("Hey");
+
+
+    console.log( rows );
   }
 
   portfolioContainer.appendChild(tab);
@@ -21,4 +25,12 @@ function CreateTab(imgSource, id) {
 
 for (var i = 1; i <= 6; i++) {
   CreateTab("img/port01.jpg", i);
+}
+
+function ShowPortfolioItem() {
+
+}
+
+function HidePortfolioItem() {
+
 }
