@@ -5,6 +5,22 @@
     $dbname = "DB3772978";
 
     $dbc = mysqli_connect($servername,$username,$password,$dbname);
-    $result = mysqli_query("SELECT + FROM Portfolio", $dbc);
-    $rows_count = mysql_num_rows($result);
+
+    if (!$dbc) {
+      die("Connection failed: " . mysqli_connect_error());
+    }
+
+    $sql = "SELECT id, Naam, Subtitle, ProjectBeschrijving, WatHebIkGeleerd, Tools, Overig, Github, Project, Videos, Images FROM Portfolio";
+    $result = mysqli_query($dbc,$sql);
+
+    $row_count = $result->num_rows;
+    $database = array();
+
+    if ($row_count > 0) {
+      while ($row = $result->fetch_assoc()) {
+        //array_push($database, $row)
+      }
+    }
+
+    mysqli_close($dbc);
  ?>

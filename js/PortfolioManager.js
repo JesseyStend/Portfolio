@@ -11,7 +11,7 @@ function CreateTab(imgSource, id) {
   img.setAttribute('src', imgSource);
   inside.appendChild(img);
   tab.appendChild(inside);
-  var rows = "<?php echo $rows_count; ?>";
+
 
 
   tab.onclick = () =>{

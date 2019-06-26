@@ -18,6 +18,9 @@
    ?>
   <!--header-->
   <header class="main-header" id="header">
+    <script type="text/javascript">
+        var rows = "<?php echo $rows_count; ?>";
+    </script>
     <div class="bg-color">
       <!--nav-->
       <nav class="nav navbar-default navbar-fixed-top">
