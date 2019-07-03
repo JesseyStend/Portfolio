@@ -25,15 +25,13 @@
 
         if ($row_count > 0) {
           while ($row = $result->fetch_assoc()) {
-            echo $row;
+            $tempArr = explode(',', $row["Images"]);
+            $row["Images"] = $tempArr;
             array_push($database, $row);
-            echo $database[0];
           }
         }
 
         $myJSON = json_encode($database);
-
-        echo $myJSON;
 
         mysqli_close($dbc);
      ?>

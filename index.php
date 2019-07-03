@@ -41,9 +41,9 @@
       <!--/ nav-->
       <div class="container text-center">
         <div class="wrapper wow fadeInUp delay-05s">
-          <h2 class="top-title">Game Development</h2>
+          <h2 class="top-title">Game Developer</h2>
           <h3 class="title">Jessey Stend</h3>
-          <h4 class="sub-title">A love for netcoding and visual development</h4>
+          <h4 class="sub-title">Een liefde voor visual development</h4>
         </div>
       </div>
     </div>
@@ -56,7 +56,6 @@
     <script type="text/javascript">
         var rows = "<?php echo $row_count; ?>";
         var databaseContent = <?php echo $myJSON; ?>;
-        console.log(databaseContent);
     </script>
 
     <div class="container">
@@ -68,26 +67,30 @@
           </div>
         </div>
         <div class="col-md-12 col-sm-12" id="ProjectInfo">
-            <div class="ShowCase">
-              <div id="ProjectImage">
-                <img src="img/port01.jpg" alt="" class="img-responsive">
-              </div>
+          <!-- <div class="ShowCase">
+            <div class="ProjectImage fadeInUp">
+              <div id="numbertext">1 / 3</div>
+              <iframe width="720" height="400" src="https://www.youtube.com/embed/GstXQTnMJrk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <img src="img/port01.jpg" alt="" class="img-responsive">
             </div>
-            <div class="ProjectInformation">
-              <h2>Project naam</h2>
-              <p>Subtitle</p>
-              <h4>Beschrijving</h4>
-              <h5 id="Beschrijving">Some text</h5>
-              <h4>Geleerd</h4>
-              <h5 id="Geleerd">Some text</h5>
-              <h4>Overig</h4>
-              <h5 id="Overig">Some text</h5>
-            </div>
-            <div class="ProjectLinks">
-              <a id="Projectlink" href="https://www.google.com/search?q=github+logo&rlz=1C1TIGY_enNL701NL701&tbm=isch&source=lnt&tbs=ic:trans&sa=X&ved=0ahUKEwjUrNXJ3YbjAhWusaQKHfxtCXsQpwUIIg&biw=1536&bih=750&dpr=1.25#imgrc=Lp2OqU7fPdjSMM:"> <img src="img\Icons\ProjectIcon.png" id="ProjectIcons" alt=""> </a>
-              <a id="GithubLink" href="https://www.google.com/search?q=github+logo&rlz=1C1TIGY_enNL701NL701&tbm=isch&source=lnt&tbs=ic:trans&sa=X&ved=0ahUKEwjUrNXJ3YbjAhWusaQKHfxtCXsQpwUIIg&biw=1536&bih=750&dpr=1.25#imgrc=Lp2OqU7fPdjSMM:"> <img src="img/Icons/GithubIcon.png" id="ProjectIcons" alt=""> </a>
-            </div>
+            <button class="slideButton" id="leftButton" type="button" name="button">&#10094;</button>
+            <button class="slideButton" id="rightButton" type="button" name="button">&#10095;</button>
           </div>
+          <div class="ProjectInformation">
+            <h2 id="Naam">Project naam</h2>
+            <p id="Subtitle">Subtitle</p>
+            <h4>Beschrijving</h4>
+            <h5 id="Beschrijving">Some text</h5>
+            <h4>Geleerd</h4>
+            <h5 id="Geleerd">Some text</h5>
+            <h4>Overig</h4>
+            <h5 id="Overig">Some text</h5>
+          </div>
+          <div class="ProjectLinks">
+            <a id="Projectlink" href="https://www.google.com/search?q=github+logo&rlz=1C1TIGY_enNL701NL701&tbm=isch&source=lnt&tbs=ic:trans&sa=X&ved=0ahUKEwjUrNXJ3YbjAhWusaQKHfxtCXsQpwUIIg&biw=1536&bih=750&dpr=1.25#imgrc=Lp2OqU7fPdjSMM:"> <img src="img\Icons\ProjectIcon.png" id="ProjectIcons" alt=""> </a>
+            <a id="GithubLink" href="https://www.google.com/search?q=github+logo&rlz=1C1TIGY_enNL701NL701&tbm=isch&source=lnt&tbs=ic:trans&sa=X&ved=0ahUKEwjUrNXJ3YbjAhWusaQKHfxtCXsQpwUIIg&biw=1536&bih=750&dpr=1.25#imgrc=Lp2OqU7fPdjSMM:"> <img src="img/Icons/GithubIcon.png" id="ProjectIcons" alt=""> </a>
+          </div>
+        </div> -->
 
         </div>
         <p class="sec-para">Klik op de plaatjes om meer informatie tevoorschijn tehalen</p>
@@ -282,6 +285,7 @@
   <script src="js/wow.js"></script>
   <script src="js/custom.js"></script>
   <script src="contactform/contactform.js"></script>
+  <script src="js\SlideShowManager.js" charset="utf-8"></script>
   <script src="js\PortfolioManager.js" charset="utf-8"></script>
 
 </body>
