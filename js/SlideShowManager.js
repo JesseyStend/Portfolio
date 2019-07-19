@@ -35,7 +35,7 @@ function CreateSlide(name, source, id, limmit, display) {
     var video = CreateElement("iframe", ['width', 'height', 'src', 'frameborder', 'allow', 'allowfullscreen'], ["720", "400", source, "0", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture", "true"]);
     object.appendChild(video);
   } else {
-    var image = CreateElement("img", ['src', 'class'], ["img/" + name + "/" + source, "img-responsive"]);
+    var image = CreateElement("img", ['src', 'class'], ["img/" + name + "/" + source, "img-responsive ActualProjectImage"]);
     object.appendChild(image);
   }
   object.style.display = display;
