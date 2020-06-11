@@ -67,64 +67,9 @@
           </div>
         </div>
         <div class="col-md-12 col-sm-12" id="ProjectInfo">
-          <!-- <div class="ShowCase">
-            <div class="ProjectImage fadeInUp">
-              <div id="numbertext">1 / 3</div>
-              <iframe width="720" height="400" src="https://www.youtube.com/embed/GstXQTnMJrk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-              <img src="img/port01.jpg" alt="" class="img-responsive">
-            </div>
-            <button class="slideButton" id="leftButton" type="button" name="button">&#10094;</button>
-            <button class="slideButton" id="rightButton" type="button" name="button">&#10095;</button>
-          </div>
-          <div class="ProjectInformation">
-            <h2 id="Naam">Project naam</h2>
-            <p id="Subtitle">Subtitle</p>
-            <h4>Beschrijving</h4>
-            <h5 id="Beschrijving">Some text</h5>
-            <h4>Geleerd</h4>
-            <h5 id="Geleerd">Some text</h5>
-            <h4>Overig</h4>
-            <h5 id="Overig">Some text</h5>
-          </div>
-          <div class="ProjectLinks">
-            <a id="Projectlink" href="https://www.google.com/search?q=github+logo&rlz=1C1TIGY_enNL701NL701&tbm=isch&source=lnt&tbs=ic:trans&sa=X&ved=0ahUKEwjUrNXJ3YbjAhWusaQKHfxtCXsQpwUIIg&biw=1536&bih=750&dpr=1.25#imgrc=Lp2OqU7fPdjSMM:"> <img src="img\Icons\ProjectIcon.png" id="ProjectIcons" alt=""> </a>
-            <a id="GithubLink" href="https://www.google.com/search?q=github+logo&rlz=1C1TIGY_enNL701NL701&tbm=isch&source=lnt&tbs=ic:trans&sa=X&ved=0ahUKEwjUrNXJ3YbjAhWusaQKHfxtCXsQpwUIIg&biw=1536&bih=750&dpr=1.25#imgrc=Lp2OqU7fPdjSMM:"> <img src="img/Icons/GithubIcon.png" id="ProjectIcons" alt=""> </a>
-          </div>
-        </div> -->
-
         </div>
         <p class="sec-para">Klik op de plaatjes om meer informatie tevoorschijn tehalen</p>
         <div class="col-md-12 col-sm-12" id="ProjectContainer">
-          <!-- <div class="col-md-4 col-sm-6 padding-right-zero">
-            <div class="portfolio-box design">
-              <img src="img/port01.jpg" alt="" class="img-responsive">
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 padding-right-zero">
-            <div class="portfolio-box design">
-              <img src="img/port02.jpg" alt="" class="img-responsive">
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 padding-right-zero">
-            <div class="portfolio-box design">
-              <img src="img/port03.jpg" alt="" class="img-responsive">
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 padding-right-zero">
-            <div class="portfolio-box design">
-              <img src="img/port04.jpg" alt="" class="img-responsive">
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 padding-right-zero">
-            <div class="portfolio-box design">
-              <img src="img/port05.jpg" alt="" class="img-responsive">
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 padding-right-zero">
-            <div class="portfolio-box design">
-              <img src="img/port06.jpg" alt="" class="img-responsive">
-            </div>
-          </div> -->
         </div>
       </div>
     </div>
@@ -132,7 +77,6 @@
   <!---->
   <!---->
   <section id="AboutMe" class="section-padding">
-    <!-- TO:DO het fixen van het inladen over de x as. die is te groot en werkt niet lekker voor mobiel. -->
     <div class="container">
       <div class="row">
         <div class="col-md-3 wow fadeInLeft delay-05s">
