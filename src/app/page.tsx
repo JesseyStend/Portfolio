@@ -1,67 +1,112 @@
-import { unstable_noStore as noStore } from "next/cache";
+import React from "react";
+import NextJsIcon from "~/components/icons/nextjs";
+import ReactIcon from "~/components/icons/react";
+import TailwindIcon from "~/components/icons/tailwind";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "~/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "~/components/ui/carousel";
+import { getProjectsFromGithub } from "~/app/actions/getProjectsFromGithub";
 import Link from "next/link";
+import GithubLogo from "~/components/icons/github";
 
-import { CreatePost } from "~/app/_components/create-post";
-import { api } from "~/trpc/server";
+const getProjects = async () => {
+  let response = await getProjectsFromGithub();
+
+  response = response.filter((project) =>
+    project.topics.includes("highlighted"),
+  );
+
+  return response;
+};
 
 export default async function Home() {
-  noStore();
-  const hello = await api.post.hello.query({ text: "from tRPC" });
+  const projects = await getProjects();
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
-      <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16 ">
-        <h1 className="text-5xl font-extrabold tracking-tight sm:text-[5rem]">
-          Create <span className="text-[hsl(280,100%,70%)]">T3</span> App
-        </h1>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8">
-          <Link
-            className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 hover:bg-white/20"
-            href="https://create.t3.gg/en/usage/first-steps"
-            target="_blank"
-          >
-            <h3 className="text-2xl font-bold">First Steps →</h3>
-            <div className="text-lg">
-              Just the basics - Everything you need to know to set up your
-              database and authentication.
-            </div>
-          </Link>
-          <Link
-            className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 hover:bg-white/20"
-            href="https://create.t3.gg/en/introduction"
-            target="_blank"
-          >
-            <h3 className="text-2xl font-bold">Documentation →</h3>
-            <div className="text-lg">
-              Learn more about Create T3 App, the libraries it uses, and how to
-              deploy it.
-            </div>
-          </Link>
-        </div>
-        <div className="flex flex-col items-center gap-2">
-          <p className="text-2xl text-white">
-            {hello ? hello.greeting : "Loading tRPC query..."}
-          </p>
-        </div>
-
-        <CrudShowcase />
-      </div>
+    <main className="grid min-h-full flex-1 grid-cols-1  p-4 pt-0">
+      <Card className="overflow-auto">
+        <CardHeader>
+          <CardDescription>
+            I&apos;m a software engineer with a passion for web development. My
+            background is game-development, but I&apos;ve been working with web
+            development for the last 5 years.
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="grid grid-cols-2 gap-4">
+          <CardTitle className=" col-span-full">Skills</CardTitle>
+          <Card className=" flex gap-2 bg-cyan-600 p-6">
+            <ReactIcon className="h-8 w-8 flex-none" />
+            <CardTitle className="m-0 flex-1 self-center text-center">
+              React.js
+            </CardTitle>
+          </Card>
+          <Card className="bg-secondary flex gap-2 p-6">
+            <NextJsIcon className="h-8 w-8 flex-none" />
+            <CardTitle className="m-0 flex-1 self-center text-center">
+              Next.js
+            </CardTitle>
+          </Card>
+          <Card className="bg-primary flex gap-2 p-6">
+            <CardTitle className="m-0 flex-1 self-center text-center">
+              .NET
+            </CardTitle>
+          </Card>
+          <Card className="flex gap-2 bg-blue-600 p-6">
+            <TailwindIcon className="h-8 w-8 flex-none" />
+            <CardTitle className="m-0 flex-1 self-center text-center">
+              Tailwind
+            </CardTitle>
+          </Card>
+        </CardContent>
+        <CardContent className="block">
+          <CardTitle>Highlighted projects</CardTitle>
+        </CardContent>
+        <CardFooter>
+          <Carousel className="w-full">
+            <CarouselContent>
+              {projects.map((project, index) => (
+                <CarouselItem key={index}>
+                  <Card key={project.name} className=" relative aspect-video">
+                    <CardHeader className=" overflow-clip">
+                      <CardTitle>{project.name}</CardTitle>
+                      <CardDescription>{project.description}</CardDescription>
+                    </CardHeader>
+                    <CardFooter className="absolute bottom-0 flex w-full gap-4">
+                      {project.homepage && (
+                        <Link href={project.homepage} className="flex-none">
+                          View
+                        </Link>
+                      )}
+                      <Link href={project.html_url} className="flex-none">
+                        <GithubLogo className="fill-foreground h-5 w-5" />
+                      </Link>
+                      <CardDescription className=" flex-1 text-right">
+                        {project.topics
+                          .filter((topic) => topic !== "highlighted")
+                          .join(", ")}
+                      </CardDescription>
+                    </CardFooter>
+                  </Card>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
+        </CardFooter>
+      </Card>
     </main>
-  );
-}
-
-async function CrudShowcase() {
-  const latestPost = await api.post.getLatest.query();
-
-  return (
-    <div className="w-full max-w-xs">
-      {latestPost ? (
-        <p className="truncate">Your most recent post: {latestPost.name}</p>
-      ) : (
-        <p>You have no posts yet.</p>
-      )}
-
-      <CreatePost />
-    </div>
   );
 }
