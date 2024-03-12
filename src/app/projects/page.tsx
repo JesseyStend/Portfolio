@@ -34,36 +34,38 @@ export default async function Page(props: {
   const { topic } = props.searchParams;
 
   return (
-    <main className="grid min-h-full flex-1 grid-cols-1  p-4 pt-0">
-      <Card className="overflow-auto">
-        <CardHeader className="">
-          <CardTitle>Projects</CardTitle>
-        </CardHeader>
-        <ProjectNavigation currentTopic={topic} />
-        <CardContent className="flex flex-col gap-4">
-          {projects?.map((project) => (
-            <Card key={project.name}>
-              <CardHeader className=" overflow-clip">
-                <CardTitle>{project.name}</CardTitle>
-                <CardDescription>{project.description}</CardDescription>
-              </CardHeader>
-              <CardFooter className="flex gap-4">
-                {project.homepage && (
-                  <Link href={project.homepage} className="flex-none">
-                    View
-                  </Link>
-                )}
-                <Link href={project.html_url} className="flex-none">
-                  <GithubLogo className="fill-foreground h-5 w-5" />
+    <main className="flex min-h-full flex-1 flex-col p-4 pt-0">
+      <div className="w-full flex-none pb-4">
+        <Card>
+          <CardHeader>
+            <CardTitle>Projects</CardTitle>
+          </CardHeader>
+          <ProjectNavigation currentTopic={topic} />
+        </Card>
+      </div>
+      <div className="flex flex-1 flex-col gap-4 overflow-auto">
+        {projects?.map((project) => (
+          <Card key={project.name}>
+            <CardHeader className=" overflow-clip">
+              <CardTitle>{project.name}</CardTitle>
+              <CardDescription>{project.description}</CardDescription>
+            </CardHeader>
+            <CardFooter className="flex gap-4">
+              {project.homepage && (
+                <Link href={project.homepage} className="flex-none">
+                  View
                 </Link>
-                <CardDescription className=" flex-1 text-right">
-                  {project.topics.join(", ")}
-                </CardDescription>
-              </CardFooter>
-            </Card>
-          ))}
-        </CardContent>
-      </Card>
+              )}
+              <Link href={project.html_url} className="flex-none">
+                <GithubLogo className="fill-foreground h-5 w-5" />
+              </Link>
+              <CardDescription className=" flex-1 text-right">
+                {project.topics.join(", ")}
+              </CardDescription>
+            </CardFooter>
+          </Card>
+        ))}
+      </div>
     </main>
   );
 }
