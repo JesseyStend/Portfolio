@@ -46,28 +46,20 @@ export default async function Home() {
         </CardHeader>
         <CardContent className="grid grid-cols-2 gap-4">
           <CardTitle className=" col-span-full">Skills</CardTitle>
-          <Card className=" flex gap-2 bg-cyan-600 p-6">
+          <Card className="flex items-center justify-center gap-2 bg-cyan-600 py-6">
             <ReactIcon className="h-8 w-8 flex-none" />
-            <CardTitle className="m-0 flex-1 self-center text-center">
-              React.js
-            </CardTitle>
+            <CardTitle className="m-0 flex-none">React.js</CardTitle>
           </Card>
-          <Card className="bg-secondary flex gap-2 p-6">
+          <Card className="bg-secondary flex items-center justify-center gap-2 py-6">
             <NextJsIcon className="h-8 w-8 flex-none" />
-            <CardTitle className="m-0 flex-1 self-center text-center">
-              Next.js
-            </CardTitle>
+            <CardTitle className="m-0 flex-none">Next.js</CardTitle>
           </Card>
-          <Card className="bg-primary flex gap-2 p-6">
-            <CardTitle className="m-0 flex-1 self-center text-center">
-              .NET
-            </CardTitle>
+          <Card className="bg-primary flex items-center justify-center gap-2 py-6">
+            <CardTitle className="m-0 flex-none">.NET</CardTitle>
           </Card>
-          <Card className="flex gap-2 bg-blue-600 p-6">
+          <Card className="flex items-center justify-center gap-2 bg-blue-600 py-6">
             <TailwindIcon className="h-8 w-8 flex-none" />
-            <CardTitle className="m-0 flex-1 self-center text-center">
-              Tailwind
-            </CardTitle>
+            <CardTitle className="m-0 flex-none">Tailwind</CardTitle>
           </Card>
         </CardContent>
         <CardContent className="block">
