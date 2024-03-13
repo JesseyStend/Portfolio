@@ -69,11 +69,11 @@ export default function RootLayout({
                     Home
                   </NavBadge>
                   <NavBadge value="/projects">
-                    <CodeXml className="mr-2 h-4 w-4  sm:h-6 sm:w-6" />
+                    <CodeXml className="mr-2 h-4 w-4 sm:h-6 sm:w-6" />
                     Projects
                   </NavBadge>
                   <NavBadge value="/about%20me">
-                    <SquareUser className="mr-2  sm:h-6 sm:w-6" />
+                    <SquareUser className="mr-2 h-4 w-4 sm:h-6 sm:w-6" />
                     About me
                   </NavBadge>
                 </CardContent>
