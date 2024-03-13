@@ -1,7 +1,4 @@
 import React from "react";
-import NextJsIcon from "~/components/icons/nextjs";
-import ReactIcon from "~/components/icons/react";
-import TailwindIcon from "~/components/icons/tailwind";
 import {
   Card,
   CardContent,
@@ -17,9 +14,14 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "~/components/ui/carousel";
+import {
+  SiCsharp,
+  SiTailwindcss,
+  SiNextdotjs,
+  SiReact,
+} from "@icons-pack/react-simple-icons";
 import { getProjectsFromGithub } from "~/app/actions/getProjectsFromGithub";
-import Link from "next/link";
-import GithubLogo from "~/components/icons/github";
+import Project from "./projects/project";
 
 const getProjects = async () => {
   let response = await getProjectsFromGithub();
@@ -35,7 +37,7 @@ export default async function Home() {
   const projects = await getProjects();
 
   return (
-    <main className="grid min-h-full flex-1 grid-cols-1  p-4 pt-0">
+    <main className="grid min-h-full flex-1  grid-cols-1 p-4 pt-0">
       <Card className="overflow-auto">
         <CardHeader>
           <CardDescription>
@@ -44,22 +46,23 @@ export default async function Home() {
             development for the last 5 years.
           </CardDescription>
         </CardHeader>
-        <CardContent className="grid grid-cols-2 gap-4">
+        <CardContent className="grid grid-cols-2 gap-4 sm:grid-cols-4">
           <CardTitle className=" col-span-full">Skills</CardTitle>
-          <Card className="flex items-center justify-center gap-2 bg-cyan-600 py-6">
-            <ReactIcon className="h-8 w-8 flex-none" />
-            <CardTitle className="m-0 flex-none">React.js</CardTitle>
+          <Card className="flex items-center justify-center bg-cyan-500 py-6 text-white">
+            <SiReact className="h-8 w-8 flex-none" />
+            <CardTitle className="m-0 flex-none pl-2">React.js</CardTitle>
           </Card>
-          <Card className="bg-secondary flex items-center justify-center gap-2 py-6">
-            <NextJsIcon className="h-8 w-8 flex-none" />
-            <CardTitle className="m-0 flex-none">Next.js</CardTitle>
+          <Card className="flex items-center justify-center bg-slate-800 py-6 text-white">
+            <SiNextdotjs className="h-8 w-8 flex-none" />
+            <CardTitle className="m-0 flex-none pl-2">Next.js</CardTitle>
           </Card>
-          <Card className="bg-primary flex items-center justify-center gap-2 py-6">
-            <CardTitle className="m-0 flex-none">.NET</CardTitle>
+          <Card className="flex items-center justify-center bg-purple-800 py-6 text-white">
+            <SiCsharp className="h-8 w-8 flex-none" />
+            <CardTitle className="m-0 flex-none pl-2">.NET</CardTitle>
           </Card>
-          <Card className="flex items-center justify-center gap-2 bg-blue-600 py-6">
-            <TailwindIcon className="h-8 w-8 flex-none" />
-            <CardTitle className="m-0 flex-none">Tailwind</CardTitle>
+          <Card className="flex items-center justify-center bg-blue-500 py-6 text-white">
+            <SiTailwindcss className="h-8 w-8 flex-none" />
+            <CardTitle className="m-0 flex-none pl-2">Tailwind</CardTitle>
           </Card>
         </CardContent>
         <CardContent className="block">
@@ -70,27 +73,10 @@ export default async function Home() {
             <CarouselContent>
               {projects.map((project, index) => (
                 <CarouselItem key={index}>
-                  <Card key={project.name} className=" relative aspect-video">
-                    <CardHeader className=" overflow-clip">
-                      <CardTitle>{project.name}</CardTitle>
-                      <CardDescription>{project.description}</CardDescription>
-                    </CardHeader>
-                    <CardFooter className="absolute bottom-0 flex w-full gap-4">
-                      {project.homepage && (
-                        <Link href={project.homepage} className="flex-none">
-                          View
-                        </Link>
-                      )}
-                      <Link href={project.html_url} className="flex-none">
-                        <GithubLogo className="fill-foreground h-5 w-5" />
-                      </Link>
-                      <CardDescription className=" flex-1 text-right">
-                        {project.topics
-                          .filter((topic) => topic !== "highlighted")
-                          .join(", ")}
-                      </CardDescription>
-                    </CardFooter>
-                  </Card>
+                  <Project
+                    {...project}
+                    className="mx-auto aspect-video max-w-[600px]"
+                  />
                 </CarouselItem>
               ))}
             </CarouselContent>

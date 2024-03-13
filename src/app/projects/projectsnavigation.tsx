@@ -38,8 +38,8 @@ const ProjectNavigation: React.FunctionComponent<ProjectNavigationProps> = (
           onClick={() => changeTopic("Web")}
           variant="ghost"
           className={cn(
-            "flex-1 rounded-none",
-            currentTopic === "Web" && "bg-border",
+            "flex-1 rounded-none focus:bg-none",
+            currentTopic === "Web" && "bg-border focus:bg-none",
           )}
         >
           Web
@@ -48,7 +48,7 @@ const ProjectNavigation: React.FunctionComponent<ProjectNavigationProps> = (
           onClick={() => changeTopic("Design")}
           variant="ghost"
           className={cn(
-            "flex-1 rounded-none",
+            "flex-1 rounded-none focus:bg-none",
             currentTopic === "Design" && "bg-border",
           )}
         >
@@ -58,7 +58,7 @@ const ProjectNavigation: React.FunctionComponent<ProjectNavigationProps> = (
           onClick={() => changeTopic("Game")}
           variant="ghost"
           className={cn(
-            "flex-1 rounded-none",
+            "flex-1 rounded-none focus:bg-none",
             currentTopic === "Game" && "bg-border",
           )}
         >

@@ -3,6 +3,7 @@ import { usePathname } from "next/navigation";
 import { badgeVariants } from "~/components/ui/badge";
 import Link from "next/link";
 import React from "react";
+import { cn } from "~/lib/utils";
 
 export type NavBadgeProps = {
   value: string;
@@ -18,9 +19,12 @@ const NavBadge = (props: NavBadgeProps) => {
   return (
     <Link
       href={props.value}
-      className={badgeVariants({
-        variant: isOnPath ? "default" : "outline",
-      })}
+      className={cn(
+        badgeVariants({
+          variant: isOnPath ? "default" : "outline",
+        }),
+        " sm:text-lg",
+      )}
     >
       {props.children}
     </Link>

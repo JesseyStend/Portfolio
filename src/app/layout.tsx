@@ -13,10 +13,11 @@ import {
   CardTitle,
 } from "~/components/ui/card";
 
-import HomeIcon from "~/components/icons/home";
-import CodeIcon from "~/components/icons/code";
-import PersonIcon from "~/components/icons/person";
-import NavBadge from "~/components/navbadge";
+import { Home, CodeXml, SquareUser } from "lucide-react";
+
+import NavBadge from "~/components/nav-badge";
+import { ThemeProvider } from "~/components/theme-provider";
+import DarkModeToggle from "~/components/ui/dark-mode-toggle";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -36,40 +37,50 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body
-        className={`font-sans ${inter.variable} flex max-h-screen flex-col flex-nowrap`}
-      >
+      <body className={`font-sans ${inter.variable}`}>
         <TRPCReactProvider>
-          <Card className="flex-none border-none">
-            <div className="flex items-center">
-              <div className="p-4">
-                <Avatar className="float-left h-20 w-20">
-                  <AvatarImage src="https://github.com/JesseyStend.png" />
-                  <AvatarFallback>JS</AvatarFallback>
-                </Avatar>
-              </div>
-              <CardHeader>
-                <CardDescription>Fullstack Developer</CardDescription>
-                <CardTitle>Jessey Stend</CardTitle>
-              </CardHeader>
-            </div>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <div className="container flex max-h-screen flex-col flex-nowrap">
+              <Card className="flex-none border-none">
+                <div className="flex items-center">
+                  <div className="p-4">
+                    <Avatar className="float-left h-20 w-20">
+                      <AvatarImage src="https://github.com/JesseyStend.png" />
+                      <AvatarFallback>JS</AvatarFallback>
+                    </Avatar>
+                  </div>
+                  <CardHeader className="flex-1">
+                    <CardDescription>Fullstack Developer</CardDescription>
+                    <CardTitle>Jessey Stend</CardTitle>
+                  </CardHeader>
+                  <div className="p-4">
+                    <DarkModeToggle />
+                  </div>
+                </div>
 
-            <CardContent className="flex justify-between gap-4">
-              <NavBadge value="/">
-                <HomeIcon className="mr-2 h-4 w-4" />
-                Home
-              </NavBadge>
-              <NavBadge value="/projects">
-                <CodeIcon className="mr-2 h-4 w-4" />
-                Projects
-              </NavBadge>
-              <NavBadge value="/about%20me">
-                <PersonIcon className="mr-2 h-4 w-4" />
-                About me
-              </NavBadge>
-            </CardContent>
-          </Card>
-          {children}
+                <CardContent className="flex justify-between gap-4">
+                  <NavBadge value="/">
+                    <Home className="mr-2 h-4 w-4 sm:h-6 sm:w-6" />
+                    Home
+                  </NavBadge>
+                  <NavBadge value="/projects">
+                    <CodeXml className="mr-2 h-4 w-4  sm:h-6 sm:w-6" />
+                    Projects
+                  </NavBadge>
+                  <NavBadge value="/about%20me">
+                    <SquareUser className="mr-2  sm:h-6 sm:w-6" />
+                    About me
+                  </NavBadge>
+                </CardContent>
+              </Card>
+              {children}
+            </div>
+          </ThemeProvider>
         </TRPCReactProvider>
       </body>
     </html>

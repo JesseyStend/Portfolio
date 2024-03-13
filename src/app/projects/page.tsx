@@ -1,18 +1,10 @@
 "use server";
-import Link from "next/link";
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "~/components/ui/card";
+import { Card, CardHeader, CardTitle } from "~/components/ui/card";
 
 import ProjectNavigation from "./projectsnavigation";
-import GithubLogo from "~/components/icons/github";
 import { getProjectsFromGithub } from "~/app/actions/getProjectsFromGithub";
+import Project from "./project";
 
 const getProjects = async (searchParams: Record<string, string>) => {
   let response = await getProjectsFromGithub();
@@ -43,27 +35,9 @@ export default async function Page(props: {
           <ProjectNavigation currentTopic={topic} />
         </Card>
       </div>
-      <div className="flex flex-1 flex-col gap-4 overflow-auto">
+      <div className="grid grid-cols-1 gap-4 overflow-auto sm:grid-cols-2">
         {projects?.map((project) => (
-          <Card key={project.name}>
-            <CardHeader className=" overflow-clip">
-              <CardTitle>{project.name}</CardTitle>
-              <CardDescription>{project.description}</CardDescription>
-            </CardHeader>
-            <CardFooter className="flex gap-4">
-              {project.homepage && (
-                <Link href={project.homepage} className="flex-none">
-                  View
-                </Link>
-              )}
-              <Link href={project.html_url} className="flex-none">
-                <GithubLogo className="fill-foreground h-5 w-5" />
-              </Link>
-              <CardDescription className=" flex-1 text-right">
-                {project.topics.join(", ")}
-              </CardDescription>
-            </CardFooter>
-          </Card>
+          <Project key={project.name} {...project} />
         ))}
       </div>
     </main>
