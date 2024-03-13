@@ -21,7 +21,7 @@ import {
   SiReact,
 } from "@icons-pack/react-simple-icons";
 import { getProjectsFromGithub } from "~/app/actions/getProjectsFromGithub";
-import Project from "./projects/project";
+import ProjectComponent from "./projects/project";
 
 const getProjects = async () => {
   let response = await getProjectsFromGithub();
@@ -73,7 +73,7 @@ export default async function Home() {
             <CarouselContent>
               {projects.map((project, index) => (
                 <CarouselItem key={index}>
-                  <Project
+                  <ProjectComponent
                     {...project}
                     className="mx-auto aspect-video max-w-[600px]"
                   />

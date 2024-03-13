@@ -4,7 +4,7 @@ import { Card, CardHeader, CardTitle } from "~/components/ui/card";
 
 import ProjectNavigation from "./projectsnavigation";
 import { getProjectsFromGithub } from "~/app/actions/getProjectsFromGithub";
-import Project from "./project";
+import ProjectComponent from "./project";
 
 const getProjects = async (searchParams: Record<string, string>) => {
   let response = await getProjectsFromGithub();
@@ -37,7 +37,7 @@ export default async function Page(props: {
       </div>
       <div className="grid grid-cols-1 gap-4 overflow-auto sm:grid-cols-2">
         {projects?.map((project) => (
-          <Project key={project.name} {...project} />
+          <ProjectComponent key={project.name} {...project} />
         ))}
       </div>
     </main>

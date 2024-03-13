@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Project } from "../actions/getProjectsFromGithub";
+import { type Project } from "../actions/getProjectsFromGithub";
 
 import {
   Card,
@@ -15,7 +15,7 @@ type ProjectProps = Project & {
   className?: string;
 };
 
-const Project: React.FunctionComponent<ProjectProps> = (project) => {
+const ProjectComponent: React.FunctionComponent<ProjectProps> = (project) => {
   return (
     <Card className={cn("flex flex-col", project.className)}>
       <CardHeader className="flex-1 overflow-clip">
@@ -39,4 +39,4 @@ const Project: React.FunctionComponent<ProjectProps> = (project) => {
   );
 };
 
-export default Project;
+export default ProjectComponent;
