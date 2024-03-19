@@ -12,7 +12,9 @@ export type Project = {
 
 export async function getProjectsFromGithub() {
   const response = (await (
-    await fetch("https://api.github.com/users/JesseyStend/repos")
+    await fetch("https://api.github.com/users/JesseyStend/repos", {
+      next: { revalidate: 3600 },
+    })
   ).json()) as Project[];
 
   return response;
