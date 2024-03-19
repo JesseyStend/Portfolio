@@ -19,6 +19,8 @@ import NavBadge from "~/components/nav-badge";
 import { ThemeProvider } from "~/components/theme-provider";
 import DarkModeToggle from "~/components/ui/dark-mode-toggle";
 
+import { Analytics } from "@vercel/analytics/react";
+
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
@@ -82,6 +84,7 @@ export default function RootLayout({
             </div>
           </ThemeProvider>
         </TRPCReactProvider>
+        <Analytics />
       </body>
     </html>
   );
