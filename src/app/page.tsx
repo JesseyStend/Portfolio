@@ -41,8 +41,8 @@ export default async function Home() {
       <CardHeader className="pt-0">
         <CardDescription>
           I&apos;m a software engineer with a passion for web development. My
-          background is game-development, but I&apos;ve been working with web
-          development for the last 5 years.
+          background is game development, but I&apos;ve been working with web
+          for the last 5 years and absolutely love the fast pass of new tech.
         </CardDescription>
       </CardHeader>
       <CardContent className="grid grid-cols-2 gap-4 py-0 sm:grid-cols-4">

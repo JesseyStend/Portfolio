@@ -16,8 +16,7 @@ export default async function Page() {
             If I were to ask my colleagues to describe me in a few words, it
             would be friendly, loyal, and independent. I am at a point in my
             career where I am going to specialize. Therefore, I want to focus
-            more on front-end, UX, and Gamification. Think, for example, of
-            implementing an achievement system within your platform.
+            more on front-end, UX, and gamification.
           </CardDescription>
         </CardContent>
       </Card>
