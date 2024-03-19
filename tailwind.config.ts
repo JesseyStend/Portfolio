@@ -13,7 +13,7 @@ const config = {
     container: {
       center: true,
       screens: {
-        lg: "984px",
+        lg: "800px",
       },
     },
     extend: {

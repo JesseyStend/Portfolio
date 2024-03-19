@@ -37,37 +37,37 @@ export default async function Home() {
   const projects = await getProjects();
 
   return (
-    <main className="grid min-h-full flex-1  grid-cols-1 p-4 pt-0">
-      <Card className="overflow-auto">
-        <CardHeader>
-          <CardDescription>
-            I&apos;m a software engineer with a passion for web development. My
-            background is game-development, but I&apos;ve been working with web
-            development for the last 5 years.
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="grid grid-cols-2 gap-4 sm:grid-cols-4">
-          <CardTitle className=" col-span-full">Skills</CardTitle>
-          <Card className="flex items-center justify-center bg-cyan-500 py-6 text-white">
-            <SiReact className="h-8 w-8 flex-none" />
-            <CardTitle className="m-0 flex-none pl-2">React.js</CardTitle>
-          </Card>
-          <Card className="flex items-center justify-center bg-slate-800 py-6 text-white">
-            <SiNextdotjs className="h-8 w-8 flex-none" />
-            <CardTitle className="m-0 flex-none pl-2">Next.js</CardTitle>
-          </Card>
-          <Card className="flex items-center justify-center bg-purple-800 py-6 text-white">
-            <SiCsharp className="h-8 w-8 flex-none" />
-            <CardTitle className="m-0 flex-none pl-2">.NET</CardTitle>
-          </Card>
-          <Card className="flex items-center justify-center bg-blue-500 py-6 text-white">
-            <SiTailwindcss className="h-8 w-8 flex-none" />
-            <CardTitle className="m-0 flex-none pl-2">Tailwind</CardTitle>
-          </Card>
-        </CardContent>
-        <CardContent className="block">
+    <main className="grid min-h-full flex-1 grid-cols-1 gap-2 rounded-lg sm:border sm:py-4">
+      <CardHeader className="pt-0">
+        <CardDescription>
+          I&apos;m a software engineer with a passion for web development. My
+          background is game-development, but I&apos;ve been working with web
+          development for the last 5 years.
+        </CardDescription>
+      </CardHeader>
+      <CardContent className="grid grid-cols-2 gap-4 py-0 sm:grid-cols-4">
+        <CardTitle className=" col-span-full">Skills</CardTitle>
+        <Card className="flex items-center justify-center bg-cyan-500 py-6 text-white">
+          <SiReact className="h-8 w-8 flex-none" />
+          <CardTitle className="m-0 flex-none pl-2">React.js</CardTitle>
+        </Card>
+        <Card className="flex items-center justify-center bg-slate-800 py-6 text-white">
+          <SiNextdotjs className="h-8 w-8 flex-none" />
+          <CardTitle className="m-0 flex-none pl-2">Next.js</CardTitle>
+        </Card>
+        <Card className="flex items-center justify-center bg-purple-800 py-6 text-white">
+          <SiCsharp className="h-8 w-8 flex-none" />
+          <CardTitle className="m-0 flex-none pl-2">.NET</CardTitle>
+        </Card>
+        <Card className="flex items-center justify-center bg-blue-500 py-6 text-white">
+          <SiTailwindcss className="h-8 w-8 flex-none" />
+          <CardTitle className="m-0 flex-none pl-2">Tailwind</CardTitle>
+        </Card>
+      </CardContent>
+      <div>
+        <CardHeader className="block">
           <CardTitle>Highlighted projects</CardTitle>
-        </CardContent>
+        </CardHeader>
         <CardFooter>
           <Carousel className="w-full">
             <CarouselContent>
@@ -84,7 +84,7 @@ export default async function Home() {
             <CarouselNext />
           </Carousel>
         </CardFooter>
-      </Card>
+      </div>
     </main>
   );
 }

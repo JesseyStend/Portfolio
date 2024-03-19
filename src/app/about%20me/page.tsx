@@ -8,12 +8,10 @@ import {
 
 export default async function Page() {
   return (
-    <main className="grid min-h-full flex-1 grid-cols-1 gap-4 overflow-auto p-4 pt-0">
-      <Card>
-        <CardHeader>
-          <CardTitle>About Me</CardTitle>
-        </CardHeader>
+    <main className="grid min-h-full flex-1 grid-cols-1 overflow-auto">
+      <Card className="border-none">
         <CardContent>
+          <CardTitle className="pb-4">About Me</CardTitle>
           <CardDescription>
             If I were to ask my colleagues to describe me in a few words, it
             would be friendly, loyal, and independent. I am at a point in my
@@ -23,11 +21,9 @@ export default async function Page() {
           </CardDescription>
         </CardContent>
       </Card>
-      <Card>
-        <CardHeader>
-          <CardTitle>Experience</CardTitle>
-        </CardHeader>
-        <CardContent className="flex flex-col gap-4">
+      <Card className="border-none">
+        <CardContent className="flex flex-col gap-2">
+          <CardTitle className="pb-4">Experience</CardTitle>
           <Card>
             <CardHeader>
               <CardTitle>Software engineer</CardTitle>
@@ -35,6 +31,7 @@ export default async function Page() {
               <CardDescription>Starlims · Fulltime</CardDescription>
             </CardHeader>
           </Card>
+
           <Card>
             <CardHeader>
               <CardTitle>Fullstack Developer</CardTitle>
@@ -49,6 +46,7 @@ export default async function Page() {
               </CardDescription>
             </CardContent>
           </Card>
+
           <Card>
             <CardHeader>
               <CardTitle>Frontend Developer</CardTitle>
