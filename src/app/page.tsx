@@ -37,7 +37,7 @@ export default async function Home() {
   const projects = await getProjects();
 
   return (
-    <main className="grid min-h-full flex-1 grid-cols-1 gap-2 rounded-lg sm:border sm:py-4">
+    <main className="grid flex-1 grid-cols-1 gap-2 rounded-lg">
       <CardHeader className="pt-0">
         <CardDescription>
           I&apos;m a software engineer with a passion for web development. My
