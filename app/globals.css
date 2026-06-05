@@ -102,14 +102,49 @@
     font-family: var(--font-body);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
-    background-image:
+    transition: background-color 0.4s ease, color 0.4s ease;
+  }
+  /* Ambient mesh, fixed to the viewport. Painting it on body directly makes it
+     tile per viewport-height (html is h-full), causing visible seams on scroll.
+     Shared via --bg-mesh so .bg-canvas can paint an identical copy. */
+  :root {
+    --bg-mesh:
       radial-gradient(1200px 600px at 85% -5%, var(--mesh-1) 0%, transparent 60%),
       radial-gradient(900px 500px at 0% 100%, var(--mesh-2) 0%, transparent 55%);
-    transition: background-color 0.4s ease, color 0.4s ease;
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image: var(--bg-mesh);
   }
   ::selection {
     background: var(--color-accent-soft);
     color: var(--color-ink);
+  }
+}
+
+/* ───────────────────────────────────────────────────────────
+   4. Components
+   ─────────────────────────────────────────────────────────── */
+@layer components {
+  /* An opaque copy of the page background (color + mesh) for sticky elements.
+     A viewport-sized fixed ::before is painted with the same layers as the
+     page canvas and clipped to this element's box, so it lines up with the
+     viewport-fixed mesh at any scroll position — no translucent mismatch. */
+  .bg-canvas {
+    clip-path: inset(0);
+  }
+  .bg-canvas::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background-color: var(--color-bg);
+    background-image: var(--bg-mesh);
+    transition: background-color 0.4s ease;
   }
 }
 
