@@ -1,26 +1,122 @@
 @import "tailwindcss";
 
+/* ───────────────────────────────────────────────────────────
+   1. RAW PALETTE — plain CSS vars so they can flip per theme.
+   Default = light. Dark overrides below.
+   ─────────────────────────────────────────────────────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --c-bg: #f6f3ec;
+  --c-bg-soft: #efeae0;
+  --c-line: #ddd5c6;
+  --c-line-soft: #e6e0d3;
+  --c-ink: #2b2722;
+  --c-ink-dim: #6a6256;
+  --c-ink-faint: #9a9183;
+  --c-accent: #b8623a;
+  --c-accent-soft: #f0e2d6;
+  --c-teal: #2f7d6b;
+  --c-teal-bg: rgb(47 125 107 / 0.08);
+  --c-teal-line: rgb(47 125 107 / 0.22);
+
+  --shadow-card: 0 1px 2px rgb(43 39 34 / 0.04), 0 8px 30px rgb(43 39 34 / 0.06);
+  --mesh-1: rgb(216 140 95 / 0.10);
+  --mesh-2: rgb(127 183 168 / 0.10);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* explicit dark (toggle sets data-theme="dark") */
+[data-theme="dark"] {
+  --c-bg: #0f1115;
+  --c-bg-soft: #161922;
+  --c-line: #252a35;
+  --c-line-soft: #1d212b;
+  --c-ink: #e7e3da;
+  --c-ink-dim: #9aa0ac;
+  --c-ink-faint: #6b7280;
+  --c-accent: #d98c5f;
+  --c-accent-soft: #3a2a20;
+  --c-teal: #7fb7a8;
+  --c-teal-bg: rgb(127 183 168 / 0.08);
+  --c-teal-line: rgb(127 183 168 / 0.18);
+
+  --shadow-card: none;
+  --mesh-1: #1a1d27;
+  --mesh-2: #16191f;
 }
 
+/* auto = follow system when no explicit choice has been made */
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  :root:not([data-theme]) {
+    --c-bg: #0f1115;
+    --c-bg-soft: #161922;
+    --c-line: #252a35;
+    --c-line-soft: #1d212b;
+    --c-ink: #e7e3da;
+    --c-ink-dim: #9aa0ac;
+    --c-ink-faint: #6b7280;
+    --c-accent: #d98c5f;
+    --c-accent-soft: #3a2a20;
+    --c-teal: #7fb7a8;
+    --c-teal-bg: rgb(127 183 168 / 0.08);
+    --c-teal-line: rgb(127 183 168 / 0.18);
+
+    --shadow-card: none;
+    --mesh-1: #1a1d27;
+    --mesh-2: #16191f;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ───────────────────────────────────────────────────────────
+   2. @theme — expose the palette + fonts to Tailwind so you get
+   utilities like bg-bg, text-ink-dim, border-line, text-accent…
+   These reference the vars above, so they track the theme.
+   ─────────────────────────────────────────────────────────── */
+@theme {
+  --color-bg: var(--c-bg);
+  --color-bg-soft: var(--c-bg-soft);
+  --color-line: var(--c-line);
+  --color-line-soft: var(--c-line-soft);
+  --color-ink: var(--c-ink);
+  --color-ink-dim: var(--c-ink-dim);
+  --color-ink-faint: var(--c-ink-faint);
+  --color-accent: var(--c-accent);
+  --color-accent-soft: var(--c-accent-soft);
+  --color-teal: var(--c-teal);
+  --color-teal-bg: var(--c-teal-bg);
+  --color-teal-line: var(--c-teal-line);
+
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Spline Sans", system-ui, sans-serif;
+  --font-mono: "Spline Sans Mono", monospace;
+
+  --radius-card: 10px;
+  --shadow-card: var(--shadow-card);
+}
+
+/* ───────────────────────────────────────────────────────────
+   3. Base element styling
+   ─────────────────────────────────────────────────────────── */
+@layer base {
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    background-image:
+      radial-gradient(1200px 600px at 85% -5%, var(--mesh-1) 0%, transparent 60%),
+      radial-gradient(900px 500px at 0% 100%, var(--mesh-2) 0%, transparent 55%);
+    transition: background-color 0.4s ease, color 0.4s ease;
+  }
+  ::selection {
+    background: var(--color-accent-soft);
+    color: var(--color-ink);
+  }
+}
+
+.container {
+  @media (min-width: 24rem) {
+    .container {
+        max-width: 24rem;
+    }
+  }
 }
