@@ -29,15 +29,13 @@ export default function HeaderCard() {
   return (
     <header className="flex w-full items-center gap-8">
       <Image
-        className="rounded-full"
+        className="rounded-full size-24 md:size-36"
         src={img}
         alt={"Headshot"}
-        width={128}
-        height={128}
       />
       <div className="flex flex-col gap-1">
         <h1 className="text-3xl font-extrabold">Jessey Stend</h1>
-        <h2 className="text-2xl font-medium">Full-stack Developer</h2>
+        <h2 className="text-xl md:text-2xl font-medium">Full-stack Developer</h2>
         <ul className="flex gap-4 pt-1">
           {links.map(({ label, href, icon }) => (
             <li key={label}>
